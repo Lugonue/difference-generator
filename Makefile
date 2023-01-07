@@ -6,7 +6,9 @@ publish:
 	npm publish --dry-run
 test:
 	NODE_OPTIONS=--experimental-vm-modules npx jest
-	npx eslint --no-eslintrc --config .eslintrc.json .
-	
-test_fix:
+test_coverage:
+	NODE_OPTIONS=--experimental-vm-modules npx jest --coverage
+test_fix_lint:
 	npx eslint --no-eslintrc --config .eslintrc.json --fix .
+lint:
+	npx eslint --no-eslintrc --config .eslintrc.json .

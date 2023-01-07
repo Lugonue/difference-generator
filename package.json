@@ -10,6 +10,9 @@
   },
   "author": "constantine popko",
   "license": "ISC",
+  "scripts": {
+    "test": "npx jest"
+  },
   "bugs": {
     "url": "https://github.com/Lugonue/frontend-project-46/issues"
   },
@@ -22,6 +25,8 @@
     "gendiff": "bin/gendiff.js"
   },
   "devDependencies": {
-    "eslint": "^8.31.0"
+    "eslint": "^8.31.0",
+    "jest": "^29.3.1",
+    "npm-check-updates": "^16.6.2"
   }
 }
