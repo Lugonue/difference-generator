@@ -32,7 +32,7 @@ const a =
   + timeout: 20
   + verbose: true
 }`;
-  const b = compareData('file1.json', 'file2.json');
+  const b = compareData('__test__/__fixtures__/file1.json', '__test__/__fixtures__/file2.json');
   expect(b).toEqual(a);
 
 })
