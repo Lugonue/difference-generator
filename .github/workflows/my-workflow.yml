@@ -31,10 +31,9 @@ jobs:
       # Запускаем линтер
       - run: make lint
       # запускаем тесты
-      - run: test_coverage
+      - run: make test
       # запускаем тесты-покрытия
-      - name: Test & publish code coverage
-        run: make test
+      - run: make test_coverage
         
       
 
