@@ -22,10 +22,12 @@ jobs:
       - run: make install
       # Запускаем линтер
       - run: make lint
-
+      # запускаем тесты
+      - run: test_coverage
+      # запускаем тесты-покрытия
       - name: Test & publish code coverage
         run: make test
-        run: test_coverage
+        
       
 
 
