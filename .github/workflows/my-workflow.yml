@@ -18,20 +18,15 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
+      - run: make install
+      - run: make lint
+      - run: make test
       - uses: paambaati/codeclimate-action@v3.0.0
         env:
           CC_TEST_REPORTER_ID: ${{ secrets.MY_SECRET_CODECLIMATE }}
         with:
           coverageCommand: make test_coverage
-          debug: true
-          
-      # Ставим зависимости
-      - run: make install
-      # Запускаем линтер
-      - run: make lint
-      # запускаем тесты
-      - run: make test
-        
+          debug: true 
       
 
 

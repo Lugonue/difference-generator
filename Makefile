@@ -5,9 +5,9 @@ gen_diff:
 publish:
 	npm publish --dry-run
 test:
-	NODE_OPTIONS=--experimental-vm-modules npx jest
+	npx jest
 test_coverage:
-	NODE_OPTIONS=--experimental-vm-modules npx jest --coverage --coverageProvider=v8
+	npx jest --coverage 
 test_fix_lint:
 	npx eslint --no-eslintrc --config .eslintrc.json --fix .
 lint:
