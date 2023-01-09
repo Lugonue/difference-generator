@@ -13,11 +13,13 @@ jobs:
   build:
     # The type of machine to run the job on
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18.x]
     steps:
       # Check-out repository under GitHub workspace
         # https://github.com/actions/checkout
       - uses: actions/checkout@v3
-        # Step's name
       - name: Use Node.js ${{ matrix.node-version }}
         # Configures the node version used on GitHub-hosted runners
         # https://github.com/actions/setup-node
@@ -35,7 +37,13 @@ jobs:
       # запускаем тесты-покрытия
       - run: make test_coverage
         
-      
+      - uses: paambaati/codeclimate-action@v3.0.0
+      env:
+          CC_TEST_REPORTER_ID: ${{ secrets.MY_SECRET_CODECLIMATE }}
+        with:
+          coverageCommand: make test_coverage
+          debug: true
+
 
 
 
@@ -44,7 +52,7 @@ jobs:
         # uses: paambaati/codeclimate-action@v3.0.0
       #   # Add Code Climate secret key
         # env:
-          # CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
+          # CC_TEST_REPORTER_ID: ${{ secrets.MY_SECRET_CODECLIMATE }}
         # with:
           # coverageCommand: make test_coverage
           # debug: true
