@@ -4,7 +4,6 @@ on:
   - pull_request
 env:
   CI: true
-  CC_TEST_REPORTER_ID: ${{ secrets.MY_SECRET_CODECLIMATE }}
     
 jobs:
   build:  
@@ -20,6 +19,11 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
       - uses: paambaati/codeclimate-action@v3.0.0
+        env:
+          CC_TEST_REPORTER_ID: ${{ secrets.MY_SECRET_CODECLIMATE }}
+        with:
+          coverageCommand: make test_coverage
+          debug: true
           
       # Ставим зависимости
       - run: make install
@@ -27,8 +31,6 @@ jobs:
       - run: make lint
       # запускаем тесты
       - run: make test
-      # запускаем тесты-покрытия
-      - run: make test_coverage
         
       
 
@@ -36,11 +38,10 @@ jobs:
 
 
       #   # Publish code coverage on Code Climate
-      #   # https://github.com/paambaati/codeclimate-action
-        # uses: paambaati/codeclimate-action@v3.0.0
-      #   # Add Code Climate secret key
-        # env:
-          # CC_TEST_REPORTER_ID: ${{ secrets.MY_SECRET_CODECLIMATE }}
-        # with:
-          # coverageCommand: make test_coverage
-          # debug: true
+      # #   # https://github.com/paambaati/codeclimate-action
+      #   uses: paambaati/codeclimate-action@v3.0.0
+      #   env:
+      #     CC_TEST_REPORTER_ID: ${{ secrets.MY_SECRET_CODECLIMATE }}
+      #   with:
+      #     coverageCommand: make test_coverage
+      #     debug: true
