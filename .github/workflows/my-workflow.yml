@@ -28,6 +28,12 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
+      - uses: paambaati/codeclimate-action@v3.0.0
+      env:
+          CC_TEST_REPORTER_ID: ${{ secrets.MY_SECRET_CODECLIMATE }}
+        with:
+          coverageCommand: make test_coverage
+          debug: true
       # Ставим зависимости
       - run: make install
       # Запускаем линтер
@@ -37,12 +43,7 @@ jobs:
       # запускаем тесты-покрытия
       - run: make test_coverage
         
-      - uses: paambaati/codeclimate-action@v3.0.0
-      env:
-          CC_TEST_REPORTER_ID: ${{ secrets.MY_SECRET_CODECLIMATE }}
-        with:
-          coverageCommand: make test_coverage
-          debug: true
+      
 
 
 
