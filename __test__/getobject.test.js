@@ -1,26 +1,22 @@
-import { compareData, getExtantion, getObject } from "../src/flatDiffGen.js";
+import { compareData } from "../src/flatDiffGen.js";
+import { parser } from "../src/parsers.js";
 
 
 test('get object from file-name', () => {
-  const a = 'file1.json';
+  const a = '__test__/__fixtures__/file1.json';
+  const a1 = '__test__/__fixtures__/file1.yaml';
+  const a2 = '__test__/__fixtures__/file1.yml';
   const b = {
     "host": "hexlet.io",
     "timeout": 50,
     "proxy": "123.234.53.22",
     "follow": false
   };
-  expect(getObject(a)).toEqual(b);
+  expect(parser(a)).toEqual(b);
+  expect(parser(a1)).toEqual(b);
+  expect(parser(a2)).toEqual(b);
 })
 
-test('get extension of file', () => {
-  const a = ('file1.json');
-  const a1 = ('file1.yml');
-
-  expect(getExtantion(a)).toEqual('json');
-  expect(getExtantion(a1)).toEqual('yml');
-
-
-})
 
 test('compareData', () => {
 const a = 
@@ -33,6 +29,8 @@ const a =
   + verbose: true
 }`;
   const b = compareData('__test__/__fixtures__/file1.json', '__test__/__fixtures__/file2.json');
+  const b1 = compareData('__test__/__fixtures__/file1.yaml', '__test__/__fixtures__/file2.yaml');
   expect(b).toEqual(a);
+  expect(b1).toEqual(a);
 
 })
