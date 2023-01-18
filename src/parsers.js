@@ -11,5 +11,4 @@ const parser = (fileName) => { // принимает имя файла => воз
 }
 
 
-
 export { parser }

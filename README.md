@@ -12,12 +12,14 @@ make install
 ```
 ## Run
 ```Bash
-gendiff
+gendiff <filename> <filename>
 ```
 
 
 #### asciinema: 
-- gendiff between **.json** and **.json**
+- generate differense flat **.json** and **.json**
 [![asciinema](https://asciinema.org/a/hMqjGMYcukBPCy4v7wmUR9i4y.svg)](https://asciinema.org/a/hMqjGMYcukBPCy4v7wmUR9i4y)
-- gendiff between **.json** and **.yaml**
+- generate differense flat between **.json** and **.yaml**
 [![asciinema](https://asciinema.org/a/pGeujyQ1EKTgFthB1JEaH4mjH.svg)](https://asciinema.org/a/pGeujyQ1EKTgFthB1JEaH4mjH)
+- generate differense deep (.json, .yaml)
+[![asciinema](https://asciinema.org/a/j3T7pFNPkTxb08Thojyk5BZ1R)](https://asciinema.org/a/j3T7pFNPkTxb08Thojyk5BZ1R)
