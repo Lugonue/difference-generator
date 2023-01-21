@@ -1,4 +1,4 @@
-import { stylish } from "../src/stylish.js";
+import { stylish } from "../src/formatters/stylish.js";
 
 const a =
   `{

@@ -28,7 +28,6 @@ const compareFiles = (data1, data2) => {
             return acc;
         }, {});    
     }
-
     return iter(currentdata1, currentdata2);
 }
 

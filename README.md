@@ -15,6 +15,14 @@ make install
 gendiff <filename> <filename>
 ```
 
+- You may choose format for output, use:
+```Bash
+gendiff --format stylish <filename> <filename> 
+```
+```Bash
+gendiff --format plain <filename> <filename>
+```
+*// stylish - is default value*
 
 #### asciinema: 
 - generate differense flat **.json** and **.json**
@@ -22,4 +30,7 @@ gendiff <filename> <filename>
 - generate differense flat between **.json** and **.yaml**
 [![asciinema](https://asciinema.org/a/pGeujyQ1EKTgFthB1JEaH4mjH.svg)](https://asciinema.org/a/pGeujyQ1EKTgFthB1JEaH4mjH)
 - generate differense deep (.json, .yaml)
-[![asciinema](https://asciinema.org/a/j3T7pFNPkTxb08Thojyk5BZ1R)](https://asciinema.org/a/j3T7pFNPkTxb08Thojyk5BZ1R)
+[![asciinema](https://asciinema.org/a/j3T7pFNPkTxb08Thojyk5BZ1R.svg)](https://asciinema.org/a/j3T7pFNPkTxb08Thojyk5BZ1R)
+- generate differense deep (.json, .yaml) output formatter *plain*
+[![asciinema](https://asciinema.org/a/ryq8IPxn1Dhnpn7911S1ICmPp.svg)](https://asciinema.org/a/ryq8IPxn1Dhnpn7911S1ICmPp)
+

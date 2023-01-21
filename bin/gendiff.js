@@ -1,17 +1,17 @@
 #!/usr/bin/env node
 
 import { program } from 'commander';
-import { compareFiles } from '../src/compareFiles.js';
-import { stylish } from '../src/stylish.js';
+import { genDIffMain } from '../src/genDiffMain.js';
 
 program
-  .version('0.1.0')
+  .version('0.0.1')
   .description('Compares two configuration files and shows a difference.')
   .option('-f, --format <type>', 'output format', 'stylish')
   .arguments('<filepath1>')
   .arguments('<filepath2>')
   .action((filepath1, filepath2) => {
-    if (program.opts().format === 'stylish') console.log(stylish(compareFiles(filepath1, filepath2)));
+    const result = genDIffMain(filepath1, filepath2, program.opts().format);
+    console.log(result);
   })
 
 program.parse();
