@@ -27,20 +27,14 @@ const stylish = (data, depths = 1) => {
   for (const key in data) {
     if (!data[key].length && _.isObject(data[key])) { 
 // если значение по ключу объект - погружаемся в этот объект
-      string = `${string}\n${'  '.repeat(depths)}  ${key}: ${stylish(data[key], depths + 2)}`;
-    } 
-    else if (_.isArray(data[key])) { 
+      string += `\n${'  '.repeat(depths)}  ${key}: ${stylish(data[key], depths + 2)}`;
+    } else if (_.isArray(data[key])) { 
 // если массив то возвращаем значения по индексам массива
-      string += // строим строку по первому значению (первого объекта сравнения)
-      _.isObject(data[key][0]) ? `\n${'  '.repeat(depths)}- ${key}: ${stringify(data[key][0], depths + 1)}` : 
-      (typeof(data[key][0]) === 'undefined' ? '' : 
-      `\n${'  '.repeat(depths)}- ${key}: ${data[key][0]}`);
-      string += // строим строку по второму значению (второго объекта сравнения)
-      _.isObject(data[key][1]) ? `\n${'  '.repeat(depths)}+ ${key}: ${stringify(data[key][1], depths + 1)}` : 
-      (typeof(data[key][1]) === 'undefined' ? '' : 
-      `\n${'  '.repeat(depths)}+ ${key}: ${data[key][1]}`);
-    } 
-    else { 
+      // строим строку по первому значению (первого объекта сравнения)
+      string += _.isObject(data[key][0]) ? `\n${'  '.repeat(depths)}- ${key}: ${stringify(data[key][0], depths + 1)}` : (typeof(data[key][0]) === 'undefined' ? '' : `\n${'  '.repeat(depths)}- ${key}: ${data[key][0]}`);
+      // строим строку по второму значению (второго объекта сравнения)
+      string += _.isObject(data[key][1]) ? `\n${'  '.repeat(depths)}+ ${key}: ${stringify(data[key][1], depths + 1)}` : (typeof(data[key][1]) === 'undefined' ? '' : `\n${'  '.repeat(depths)}+ ${key}: ${data[key][1]}`);
+    } else { 
 // если строка то добавляем строку
       string = `${string}\n${'  '.repeat(depths)}  ${key}: ${data[key]}`;
     }

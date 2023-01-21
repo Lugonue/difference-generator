@@ -1,9 +1,6 @@
 import _ from 'lodash';
-import { parser } from './parsers.js';
 
-const compareFiles = (data1, data2) => {
-    const currentdata1 = parser(data1);
-    const currentdata2 = parser(data2);
+const compareFiles = (currentdata1, currentdata2) => {
     const iter = (currentdata1, currentdata2) => {
         const currentdataArray1 = Object.entries(currentdata1);
         const currentdataArray2 = Object.entries(currentdata2);
