@@ -3,7 +3,6 @@ import fs from "fs";
 import yaml from "js-yaml";
 
 const parser = (fileName) => {
-  // принимает имя файла => возвращает объект содержимого в файле
   const extension = path.extname(fileName);
   const getPath = path.resolve(fileName);
   return extension === ".json"

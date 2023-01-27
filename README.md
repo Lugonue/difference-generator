@@ -5,24 +5,15 @@
 [![My action status](https://github.com/Lugonue/frontend-project-46/actions/workflows/my-workflow.yml/badge.svg)](https://github.com/Lugonue/frontend-project-46/actions/workflows/my-workflow.yml)[![Maintainability](https://api.codeclimate.com/v1/badges/f5b8dc23b8ee3035dc6e/maintainability)](https://codeclimate.com/github/Lugonue/frontend-project-46/maintainability)[![Test Coverage](https://api.codeclimate.com/v1/badges/f5b8dc23b8ee3035dc6e/test_coverage)](https://codeclimate.com/github/Lugonue/frontend-project-46/test_coverage)
 
 
-# Start
+# Install
   
 ```Bash
 make install
 ```
-## Run
+## Start
 ```Bash
-gendiff <filename> <filename>
+gendiff -h
 ```
-
-- You may choose format for output, use:
-```Bash
-gendiff --format stylish <filename> <filename> 
-```
-```Bash
-gendiff --format plain <filename> <filename>
-```
-*// stylish - is default value*
 
 #### asciinema: 
 - generate differense flat **.json** and **.json**
@@ -33,4 +24,6 @@ gendiff --format plain <filename> <filename>
 [![asciinema](https://asciinema.org/a/j3T7pFNPkTxb08Thojyk5BZ1R.svg)](https://asciinema.org/a/j3T7pFNPkTxb08Thojyk5BZ1R)
 - generate differense deep (.json, .yaml) output formatter *plain*
 [![asciinema](https://asciinema.org/a/ryq8IPxn1Dhnpn7911S1ICmPp.svg)](https://asciinema.org/a/ryq8IPxn1Dhnpn7911S1ICmPp)
+- generate differense deep (.json, .yaml) output formatter *json*
+[![asciinema](https://asciinema.org/a/BvJHUoV1yddVfCus046PNrLPq.svg)](https://asciinema.org/a/BvJHUoV1yddVfCus046PNrLPq)
 
