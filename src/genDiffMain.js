@@ -11,4 +11,4 @@ const genDIffMain = (filepath1, filepath2, formatName) => {
 }
 
 
-export {genDIffMain};
+export default genDIffMain;
