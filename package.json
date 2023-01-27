@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "type": "module",
   "description": "[![Actions Status](https://github.com/Lugonue/frontend-project-46/workflows/hexlet-check/badge.svg)](https://github.com/Lugonue/frontend-project-46/actions)",
-  "main": "bin/gendiff.js",
+  "main": "src/genDiffMain.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Lugonue/frontend-project-46.git"
