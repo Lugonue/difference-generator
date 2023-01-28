@@ -43,4 +43,4 @@ const stylishOutput = `{
     }
 }`;
 
-export {stylishOutput};
+export default stylishOutput;

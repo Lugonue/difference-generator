@@ -1,24 +1,24 @@
 const object2 = {
   common: {
     follow: false,
-    setting1: "Value 1",
+    setting1: 'Value 1',
     setting3: null,
-    setting4: "blah blah",
+    setting4: 'blah blah',
     setting5: {
-      key5: "value5",
+      key5: 'value5',
     },
     setting6: {
-      key: "value",
-      ops: "vops",
+      key: 'value',
+      ops: 'vops',
       doge: {
-        wow: "so much",
+        wow: 'so much',
       },
     },
   },
   group1: {
-    foo: "bar",
-    baz: "bars",
-    nest: "str",
+    foo: 'bar',
+    baz: 'bars',
+    nest: 'str',
   },
   group3: {
     deep: {
@@ -30,4 +30,4 @@ const object2 = {
   },
 };
 
-export {object2};
+export default object2;

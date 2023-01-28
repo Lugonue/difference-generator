@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import { program } from 'commander';
-import  genDIffMain  from '../src/genDiffMain.js';
+import genDIffMain from '../src/genDiffMain.js';
 
 program
   .version('0.0.1')
@@ -12,8 +12,6 @@ program
   .action((filepath1, filepath2) => {
     const result = genDIffMain(filepath1, filepath2, program.opts().format);
     console.log(result);
-  })
+  });
 
 program.parse();
-
-

@@ -6,10 +6,9 @@ publish:
 	npm publish --dry-run
 test:
 	npx jest
-	npx eslint --no-eslintrc --config .eslintrc.json .
 test_coverage:
 	npx jest --coverage 
 fix_lint:
-	npx eslint --no-eslintrc --config .eslintrc.json --fix .
+	npx eslint --no-eslintrc --config .eslintrc.yml --fix .
 lint:
-	npx eslint --no-eslintrc --config .eslintrc.json .
+	npx eslint --no-eslintrc --config .eslintrc.yml .

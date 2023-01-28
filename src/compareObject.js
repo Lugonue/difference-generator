@@ -1,4 +1,4 @@
-import _ from "lodash";
+import _ from 'lodash';
 
 const compareObject = (obj1, obj2) => {
   const keysObj1 = _.keysIn(obj1);
@@ -10,43 +10,44 @@ const compareObject = (obj1, obj2) => {
       const value2 = obj2[key];
       if (_.isPlainObject(value1) && _.isPlainObject(value2)) {
         return {
-          type: "node",
-          key: key,
+          type: 'node',
+          key,
           children: compareObject(value1, value2),
         };
       }
       if (value1 === value2) {
         return {
-          type: "Equal",
-          key: key,
+          type: 'Equal',
+          key,
           value: value1,
           children: false,
         };
       }
-      if (typeof value1 !== "undefined" && typeof value2 !== "undefined")
+      if (typeof value1 !== 'undefined' && typeof value2 !== 'undefined') {
         return {
-          type: "Updated",
-          key: key,
-          value1: value1,
-          value2: value2,
+          type: 'Updated',
+          key,
+          value1,
+          value2,
           children: false,
         };
-      if (typeof value1 !== "undefined" && typeof value2 === "undefined")
+      }
+      if (typeof value1 !== 'undefined' && typeof value2 === 'undefined') {
         return {
-          type: "Removed",
-          key: key,
+          type: 'Removed',
+          key,
           value: value1,
           children: false,
         };
-      if (typeof value1 === "undefined" && typeof value2 !== "undefined")
-        return {
-          type: "Added",
-          key: key,
-          value: value2,
-          children: false,
-        };
+      }
+      return {
+        type: 'Added',
+        key,
+        value: value2,
+        children: false,
+      };
     })
     .filter((i) => i !== null);
 };
 
-export { compareObject };
+export default compareObject;

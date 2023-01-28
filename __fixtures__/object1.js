@@ -1,20 +1,20 @@
 const object1 = {
   common: {
-    setting1: "Value 1",
+    setting1: 'Value 1',
     setting2: 200,
     setting3: true,
     setting6: {
-      key: "value",
+      key: 'value',
       doge: {
-        wow: "",
+        wow: '',
       },
     },
   },
   group1: {
-    baz: "bas",
-    foo: "bar",
+    baz: 'bas',
+    foo: 'bar',
     nest: {
-      key: "value",
+      key: 'value',
     },
   },
   group2: {
@@ -25,4 +25,4 @@ const object1 = {
   },
 };
 
-export {object1};
+export default object1;

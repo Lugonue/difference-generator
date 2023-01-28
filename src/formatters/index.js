@@ -1,17 +1,17 @@
-import { plain } from "./plain.js";
-import { stylish } from "./stylish.js";
+import plain from './plain.js';
+import stylish from './stylish.js';
 
 const format = (data, formatName) => {
   switch (formatName) {
-    case "stylish":
+    case 'stylish':
       return stylish(data);
-    case "plain":
+    case 'plain':
       return plain(data);
-    case "json":
+    case 'json':
       return JSON.stringify(data);
     default:
-      return "Error, incorrect format name";
+      return 'Error, incorrect format name';
   }
 };
 
-export { format };
+export default format;
