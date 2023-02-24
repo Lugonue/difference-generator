@@ -37,4 +37,10 @@ test('jtest genDIffMain', () => {
   expect(genDIffMain(parserCase1[0], parserCase2[1], 'json')).toEqual(
     jsonOutput,
   );
+  expect(genDIffMain(parserCase1[0], parserCase2[1])).toEqual(
+    stylishOutput,
+  );
+  expect(genDIffMain(parserCase1[0], parserCase2[1], 'plain')).toEqual(
+    plainOutput,
+  );
 });
