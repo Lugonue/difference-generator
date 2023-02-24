@@ -10,10 +10,10 @@ const stringify = (val, depths) => {
 
 const stringBuilder = (status, spaces, key, value, depths) => {
   if (_.isPlainObject(value)) {
-    return `${spaces}${status} ${key}: ${stringify(value, depths + 2)}`
+    return `${spaces}${status} ${key}: ${stringify(value, depths + 2)}`;
   }
-  return `${spaces}${status} ${key}: ${value}`
-}
+  return `${spaces}${status} ${key}: ${value}`;
+};
 
 const stylish = (data, depths = 1) => {
   const spaces = '  '.repeat(depths);

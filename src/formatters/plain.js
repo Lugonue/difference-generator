@@ -16,7 +16,7 @@ const plain = (data, keyPath = '') => {
           const currentKey = `${keyPath}${item.key}.`;
           const anotherlines = plain(item.children, currentKey);
           return anotherlines;
-        };
+        }
         case ('Updated'): return `Property '${keyPath}${item.key}' was updated. From ${quotes(
           item.value1,
         )} to ${quotes(item.value2)}`;
