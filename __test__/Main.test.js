@@ -11,10 +11,10 @@ import jsonOutput from '../__fixtures__/jsonOutput.js';
 import compareObject from '../src/compareObject.js';
 
 const cases = [
-['__fixtures__/file1.json', '__fixtures__/file2.json'],
-['__fixtures__/file1.yml', '__fixtures__/file2.yml'],
-['__fixtures__/file1.json', '__fixtures__/file2.yml'],
-['__fixtures__/file1.yml', '__fixtures__/file2.json'],
+  ['__fixtures__/file1.json', '__fixtures__/file2.json'],
+  ['__fixtures__/file1.yml', '__fixtures__/file2.yml'],
+  ['__fixtures__/file1.json', '__fixtures__/file2.yml'],
+  ['__fixtures__/file1.yml', '__fixtures__/file2.json'],
 ];
 
 test('compareObject', () => {
@@ -34,7 +34,7 @@ test('plain style', () => {
   expect(plain(resultDifference)).toEqual(plainOutput);
 });
 
-test.each(cases)('jtest genDIffMain', (i, j) => {
+test.each(cases)('test genDIffMain', (i, j) => {
   expect(genDIffMain(i, j, 'json')).toEqual(
     jsonOutput,
   );
