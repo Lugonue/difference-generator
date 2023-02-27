@@ -10,19 +10,20 @@ import stylishOutput from '../__fixtures__/stylishOutput.js';
 import jsonOutput from '../__fixtures__/jsonOutput.js';
 import compareObject from '../src/compareObject.js';
 
-const parserCase1 = ['__fixtures__/file1.json', '__fixtures__/file1.yml'];
-const parserCase2 = ['__fixtures__/file2.json', '__fixtures__/file2.yml'];
+const cases = [
+['__fixtures__/file1.json', '__fixtures__/file2.json'],
+['__fixtures__/file1.yml', '__fixtures__/file2.yml'],
+['__fixtures__/file1.json', '__fixtures__/file2.yml'],
+['__fixtures__/file1.yml', '__fixtures__/file2.json'],
+];
 
 test('compareObject', () => {
   expect(compareObject(object1, object2)).toEqual(resultDifference);
 });
 
-test.each(parserCase1)('parsers file1 extantion', (i) => {
+test.each(cases)('parsers file1 extantion', (i, j) => {
   expect(parser(i)).toEqual(object1);
-});
-
-test.each(parserCase2)('parsers file2 extantion', (i) => {
-  expect(parser(i)).toEqual(object2);
+  expect(parser(j)).toEqual(object2);
 });
 
 test('stylish', () => {
@@ -33,14 +34,14 @@ test('plain style', () => {
   expect(plain(resultDifference)).toEqual(plainOutput);
 });
 
-test('jtest genDIffMain', () => {
-  expect(genDIffMain(parserCase1[0], parserCase2[1], 'json')).toEqual(
+test.each(cases)('jtest genDIffMain', (i, j) => {
+  expect(genDIffMain(i, j, 'json')).toEqual(
     jsonOutput,
   );
-  expect(genDIffMain(parserCase1[0], parserCase2[1])).toEqual(
+  expect(genDIffMain(i, j)).toEqual(
     stylishOutput,
   );
-  expect(genDIffMain(parserCase1[0], parserCase2[1], 'plain')).toEqual(
+  expect(genDIffMain(i, j, 'plain')).toEqual(
     plainOutput,
   );
 });

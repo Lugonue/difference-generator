@@ -6,7 +6,6 @@ const genDIffMain = (filepath1, filepath2, formatName = 'stylish') => {
   const data1 = parser(filepath1);
   const data2 = parser(filepath2);
   const differenceData = compareObject(data1, data2);
-  console.log(differenceData);
   const formatData = format(differenceData, formatName);
   return formatData;
 };
