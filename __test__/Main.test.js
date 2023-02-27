@@ -34,7 +34,7 @@ test('plain style', () => {
   expect(plain(resultDifference)).toEqual(plainOutput);
 });
 
-test.each(cases)('test genDIffMain', (i, j) => {
+test.each(cases)('genDIffMain', (i, j) => {
   expect(genDIffMain(i, j, 'json')).toEqual(
     jsonOutput,
   );
