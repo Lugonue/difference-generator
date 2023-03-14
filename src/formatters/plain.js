@@ -7,14 +7,14 @@ const quotes = (val) => {
     : val;
 };
 
-const plain = (data, keyPath = '') => {
+const renderPlain = (data, keyPath = '') => {
   const lines = data
     .map((item) => {
       switch (item.type) {
         case ('Equal'): return 'mark';
         case ('node'): {
           const currentKey = `${keyPath}${item.key}.`;
-          const anotherlines = plain(item.children, currentKey);
+          const anotherlines = renderPlain(item.children, currentKey);
           return anotherlines;
         }
         case ('Updated'): return `Property '${keyPath}${item.key}' was updated. From ${quotes(
@@ -30,4 +30,4 @@ const plain = (data, keyPath = '') => {
   return [...lines].join('\n');
 };
 
-export default plain;
+export default renderPlain;
